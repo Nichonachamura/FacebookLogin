@@ -1,0 +1,190 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+header {
+  height: 100px;
+  width: 100%;
+}
+body {
+ background-color: #ebeef5;
+}
+.header-nav {
+  background-color: #3b5998;
+  width: 100%;
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-logo {
+  width: auto;
+  height: auto;
+}
+.nav-logo img {
+  height: 110px;
+  width: auto;
+}
+.nav-form-container {
+  width: 50%;
+  display: flex;
+  align-items: center ;
+  justify-content: center;
+}
+.nav-form-container input {
+  border: 2px solid #000000;
+  height: 35px;
+  margin: 10px;
+  padding: 10px;
+  margin-right: 30px;
+}
+.nav-form-container .button {
+  border: 2px solid #1D3C78;
+  color: white;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+  width: 130px;
+  height: 30px;
+  background-color: #385898;
+}
+.menu-container {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  padding: 15px;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.menu-image {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 60px 20px;
+}
+.menu-image h3 {
+  text-align: center;
+  letter-spacing: -1px;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #1D3C78;
+}
+.menu-image img {
+  margin: 0 20px;
+}
+.menu-image h5 {
+  margin-top: 300px;
+}
+.menu-form {
+  margin-top: 45px;
+  margin-left: 50px;
+  padding: 5px;
+  /* border: 2px solid black; */
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.menu-form-div h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -1px;
+  font-size: 45px;
+  text-align: justify;
+}
+.menu-form-div h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 21px;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+.menu-form .formulario {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.formulario .formulario-nombres {
+  display: flex;
+}
+.formulario .input1 {
+  height: 45px;
+  width: 200px;
+  margin-top: 10px;
+  margin-right: 20px;
+  border-radius: 4px;
+  border: 1px solid #85a3e0;
+  padding-left: 10px;
+}
+.formulario .input2 {
+  height: 45px;
+  width: 420px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border: 1px solid #85a3e0;
+  padding-left: 10px;
+}
+.formulario .birthay {
+  font-size: 21px;
+  margin-top: 20px;
+}
+.menu-form .select {
+  display: flex;
+}
+.menu-form .date {
+  border-style: solid;
+  border-color: #85a3e0;
+  border-radius: 3px;
+  width: 80px;
+  height: 30px;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding-left: 5px;
+}
+.formulario .sex {
+  margin-top: 10px;
+}
+.formulario .sex-option {
+  display: flex;
+}
+.sex-option p {
+  margin-top: 10px;
+  margin-right: 20px;
+}
+.sex-option input {
+  margin-right: 10px;
+}
+.formulario .info {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 30px;
+  float: right;
+  width: 400px;
+  color: #808080;
+}
+.formulario .button-register {
+  height: 65px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 35px;
+  padding: 0 16px;
+  background-color: #42b72a;
+  color: white;
+  width: 200px;
+}
+.menu-form hr {
+  width: 60%;
+}
+.menu-form .text-finally {
+  margin-top: 20px;
+  text-decoration: none;
+  text-align: justify;
+  width: 400px;
+}
+.menu-form .text-finally a {
+  text-decoration: none;
+  color: #3b5998;
+}

