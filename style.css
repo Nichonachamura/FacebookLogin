@@ -217,6 +217,7 @@ body {
   .nav-form-container input, .nav-form-container .button {
     width: 100%; /* Hacer que los inputs y el botón ocupen todo el ancho del contenedor */
     margin: 10px 0; /* Añadir un poco de espacio vertical entre los elementos */
+    height: 40px;
     border-radius: 20px; 
   }
 }
