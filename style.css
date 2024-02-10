@@ -188,3 +188,23 @@ body {
   text-decoration: none;
   color: #3b5998;
 }
+
+@media (max-width: 768px) {
+  .menu-container {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-form-container {
+    width: 100%; /* Ocupar todo el ancho disponible */
+    flex-direction: column; /* Apilar los campos verticalmente */
+    margin-top: 20px; /* Aumentar el margen superior */
+  }
+  .nav-form-container input,
+  .nav-form-container .button {
+    margin: 10px 0; /* Ajustar los márgenes para espaciarlos verticalmente */
+    width: auto; /* Hacer que los inputs ocupen el ancho disponible */
+  }
+}
+
