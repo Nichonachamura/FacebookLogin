@@ -196,15 +196,26 @@ body {
 }
 
 @media (max-width: 768px) {
-  .nav-form-container {
-    width: 100%; /* Ocupar todo el ancho disponible */
-    flex-direction: column; /* Apilar los campos verticalmente */
-    margin-top: 20px; /* Aumentar el margen superior */
+  .header-nav {
+    flex-direction: column; /* Cambiar la dirección del flex a columna para apilar elementos verticalmente */
+    align-items: center; /* Centrar los elementos horizontalmente */
   }
-  .nav-form-container input,
-  .nav-form-container .button {
-    margin: 10px 0; /* Ajustar los márgenes para espaciarlos verticalmente */
-    width: auto; /* Hacer que los inputs ocupen el ancho disponible */
+  
+  .nav-logo {
+    margin-bottom: 20px; /* Añadir espacio debajo del logo */
+  }
+
+  .nav-form-container {
+    width: 90%; /* Ajustar el ancho del contenedor del formulario para dispositivos móviles */
+    flex-direction: column; /* Apilar los campos de input y el botón verticalmente */
+    justify-content: center;
+    align-items: center; /* Centrar los elementos dentro del contenedor */
+  }
+
+  .nav-form-container input, .nav-form-container .button {
+    width: 100%; /* Hacer que los inputs y el botón ocupen todo el ancho del contenedor */
+    margin: 10px 0; /* Añadir un poco de espacio vertical entre los elementos */
   }
 }
+
 
